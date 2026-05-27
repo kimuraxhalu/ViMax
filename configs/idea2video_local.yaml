@@ -1,0 +1,29 @@
+chat_model:
+  init_args:
+    model: gemma3:12b
+    model_provider: openai
+    api_key: "ollama"
+    base_url: http://100.114.67.45:11434/v1
+  max_requests_per_minute: null
+  max_requests_per_day: null
+
+image_generator:
+  class_path: tools.image_generator_comfyui.ImageGeneratorComfyUI
+  init_args:
+    comfyui_url: http://100.114.67.45:8188
+    width: 896
+    height: 1152
+  max_requests_per_minute: 5
+  max_requests_per_day: null
+
+video_generator:
+  class_path: tools.video_generator_comfyui_ltx.VideoGeneratorComfyUILTX
+  init_args:
+    comfyui_url: http://100.114.67.45:8188
+    width: 768
+    height: 512
+    length: 97
+  max_requests_per_minute: 2
+  max_requests_per_day: null
+
+working_dir: .working_dir/idea2video_local
